@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+{% block style %}
+{% load static %}
+
+{% endblock %}
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Megrim|Montserrat:400,600|Raleway:400,700" rel="stylesheet">
+    <link href="{% static 'css/index.css'%}" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="logout" style="float: right;">
+        <a href="/accounts/logout" style=" border-radius:3px;text-decoration:none;color:white;background-color:rgb(233, 0, 0);padding:10px;text-align:center">logout</a>
+    </div>
+    <main role=main>
+        <div class="start-display" id="start-page">
+            <header class="row" role="banner">
+                <h1 class="logo">TriPlan</h1>
+                <p>Plan your next trip by finding out the current weather and the best things to do in a new city!</p>
+            </header>
+
+            <form action="#" class="search-form row" id="search-query-form">
+                <input type="text" placeholder="Enter a city" class="search-query" id="search-term" required>
+                <button type="submit" class="submit-button">Search</button>
+            </form>
+        </div>
+        <div class=dest>
+        <div class="destination" id="image-1"><img src="{%static 'images/central-park.jpg'%}" ><p>Central Park</p></div>
+        <div class="destination" id="image-2"><img src="{%static 'images/madrid.jpg'%}"><p>Madrid</p></div>
+        <div class="destination" id="image-3"><img src="{%static 'images/Mumbai_Skyline_at_Night.jpg'%}"><p>Mumbai Skyline</p></div>
+        <div class="destination" id="image-4"><img src="{%static 'images\Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg'%}"><p>Gateway of India</p></div>
+        </div>
+        <section class="weather row" id="weather-display">
+
+        </section>
+
+        <nav role="navigation" class="navigation hide" id="results-navigation">
+            <div class="options row">
+                <button class="category-button" id="food-button">FOOD</button>
+                <button class="category-button" id="nightlife-button">NIGHTLIFE</button>
+                <button class="category-button" id="shops-button">SHOPS</button>
+                <button class="category-button" id="outdoors-button">OUTDOORS</button>
+                <button class="category-button" id="entertainment-button">ARTS</button>
+            </div>
+        </nav>
+
+        <section id="foursquare-results" class="row">
+
+        </section>
+
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{%static 'js/index.js'%}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYwwQ-wTWZ6jI75jcsRz4if7dv30i5evo&libraries=places&callback=activatePlacesSearch"></script>
+</body>
+{% endblock %}
